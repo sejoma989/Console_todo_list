@@ -1,8 +1,8 @@
-## Aplicacion de gestion lista de tareas por hacer
+# Aplicacion de gestion lista de tareas por hacer
 NodeJS
 
-# Install
+## Install
 npm install
 
-# Run
+## Run
 node app
