@@ -12,10 +12,21 @@ class Tareas {
 
     _listado = {};
 
+    
     constructor() {
         this._listado = {};
     }
+    
+    get listado(){
+        // creacion del array que se va a entregar
+        const listado = [];
+        Object.keys(this._listado).forEach( key => {
+            console.log(key);
+        });
 
+        return listado;
+    }
+    
     crearTarea( desc = '' ){
 
         const tarea = new Tarea(desc);

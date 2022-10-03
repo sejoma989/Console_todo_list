@@ -24,17 +24,19 @@ const main = async() => {
         // imprimir menu y almacenar respuesta de usuario
         opt = await inquirerMenu();
 
+        // case que evalua las opciones que recibe el usuario
         switch (opt) {
             
             case '1':
-                // crear opcion                
+                // crear tarea                
                 const desc = await leerInput('Descripcion:');
                 tareas.crearTarea( desc );
                 console.log('Tarea agregada: '.green, desc);
             break;
 
             case '2':
-                console.log( tareas._listado );
+                // listar las tareas
+                console.log( tareas.listado );
             break;
 
         }
