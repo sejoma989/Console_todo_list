@@ -1,3 +1,4 @@
+import { Tarea } from "./tarea";
 
 /*
 * Ejemplo del modelo de datos
@@ -7,12 +8,21 @@
 *      {'uuid-3324-324131-23425: {id:12, desc:asd, completadoEn:9340034 }' },
 */
 
+
 class Tareas {
 
     _listado = {};
 
     constructor() {
         this._listado = {};
+    }
+
+    crearTarea( desc = '' ){
+
+        const tarea = new Tarea(desc);
+
+        this._listado[tarea.id] = tarea;
+
     }
 
 }
