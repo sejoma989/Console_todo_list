@@ -1,5 +1,6 @@
 import ('colors');
 
+// importar configuracion de peticiones por consola
 import { 
     inquirerMenu, 
     pausa,
@@ -12,23 +13,17 @@ console.clear();
 
 const main = async() => {
     
+    //  inicializacion de variable que se captura
     let opt = '';
+
+    // inicializacion de un objeto tareas para almacenar
     const tareas = new Tareas();
-
-
-    console.log('Hola mundo!!');
 
     do {
 
+        // imprimir menu y almacenar respuesta de usuario
         opt = await inquirerMenu();
-        // console.log({ opt });
 
-        // const tarea = new Tarea('Tarea 1, comprar comida');
-        // const tareas = new Tareas();
-        // // console.log(tareas);
-
-        // tareas._listado[tarea.id] = tarea;
-        // console.log(tareas);
         switch (opt) {
             
             case '1':

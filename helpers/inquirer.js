@@ -12,40 +12,40 @@ const inquirerMenu = async() => {
             choices: [
                 {
                     value: '1',
-                    name: '1. Crear tarea'
+                    name: `${'1.'.green} Crear tarea`
                 },
                 {
                     value: '2',
-                    name: '2. Listar tareas'
+                    name: `${'2.'.green} Listar tareas`
                 },
                 {
                     value: '3',
-                    name: '3. Listar Tareas Completadas'
+                    name: `${'3.'.green} Listar Tareas Completadas`
                 },
                 {
                     value: '4',
-                    name: '4. Listar Tareas Pendientes'
+                    name: `${'4.'.green} Listar Tareas Pendientes`
                 },
                 {
                     value: '5',
-                    name: '5. Compleatar tarea(s)'
+                    name: `${'5.'.green} Compleatar tarea(s)`
                 },
                 {
                     value: '6',
-                    name: '6. Borrar tarea'
+                    name: `${'6.'.green} Borrar tarea`
                 },
                 {
                     value: '0',
-                    name: '0. Salir'
+                    name: `${'0.'.green} Salir`
                 },
             ]
         }
     ]
 
     console.clear();
-    console.log('========================'.bgGreen.white);
-    console.log('  Seleccione una opcion'.underline.green);
-    console.log('======================== \n'.bgGreen.white);
+    console.log('========================'.green);
+    console.log('  Seleccione una opcion'.white);
+    console.log('======================== \n'.green);
 
     const { opcion } = await inquirer.prompt(questions);
 
