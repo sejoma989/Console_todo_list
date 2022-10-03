@@ -32,6 +32,14 @@ class Tareas {
 
         return listado;
     }
+
+    cargarTareasFromArray( tareas = [] ) {
+
+        tareas.forEach( tarea => {
+            this._listado[tarea.id] = tarea;
+        });
+
+    }
     
     crearTarea( desc = '' ){
 

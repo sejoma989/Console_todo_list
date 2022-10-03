@@ -1,6 +1,6 @@
 import ('colors');
 
-import { guardarDB, leerDB } from './helpers/guardarArchivo.js';
+import { leerDB } from './helpers/interaccionDB.js';
 // importar configuracion de peticiones por consola
 import { 
     inquirerMenu, 
@@ -23,10 +23,11 @@ const main = async() => {
     const tareasDB = leerDB();  
 
     if ( tareasDB ){
-        // establece tareas
+        // cargar tareas de BD
+        tareas.cargarTareasFromArray(tareasDB);
     }
 
-    await pausa(); 
+    // await pausa(); 
 
     do {
 
@@ -54,7 +55,7 @@ const main = async() => {
         }
 
         // guardado en archivo que simula la bd
-        // guardarDB( tareas.listadoArr );
+        guardarDB( tareas.listadoArr );
 
         // promesa que espera la opcion del usuario
         await pausa();        
