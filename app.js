@@ -1,6 +1,6 @@
 import ('colors');
 
-import { leerDB } from './helpers/interaccionDB.js';
+import { guardarDB, leerDB } from './helpers/interaccionDB.js';
 // importar configuracion de peticiones por consola
 import { 
     inquirerMenu, 
@@ -55,7 +55,7 @@ const main = async() => {
         }
 
         // guardado en archivo que simula la bd
-        guardarDB( tareas.listadoArr );
+        guardarDB( tareas.listado );
 
         // promesa que espera la opcion del usuario
         await pausa();        
