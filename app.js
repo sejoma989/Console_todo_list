@@ -27,15 +27,18 @@ const main = async() => {
         // case que evalua las opciones que recibe el usuario
         switch (opt) {
             
+            // crear tarea
             case '1':
-                // crear tarea                
+                // leer descripcion del usuario
                 const desc = await leerInput('Descripcion:');
+                // llamado al metodo crear tarea y asignar la descripcion del usuario
                 tareas.crearTarea( desc );
                 console.log('Tarea agregada: '.green, desc);
             break;
 
+            // listar las tareas
             case '2':
-                // listar las tareas
+                // impresion por consola del array que recibe desde el listado
                 console.log( tareas.listado );
             break;
 

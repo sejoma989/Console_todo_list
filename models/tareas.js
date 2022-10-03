@@ -17,10 +17,16 @@ class Tareas {
         this._listado = {};
     }
     
+    // getter para retornar un nuevo arreglo
     get listado(){
         // creacion del array que se va a entregar
         const listado = [];
+        // extraccion de todas las llaves dentro de un arreglo usando el metodo keys de object
+        // metodo keys devuelve un arreglo de strings
+        // for each permite barrer todos los strings y usa la llave para identificar tarea
         Object.keys(this._listado).forEach( key => {
+            const tarea = this._listado[key]
+            listado.push( tarea );
             console.log(key);
         });
 
