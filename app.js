@@ -1,5 +1,6 @@
 import ('colors');
 
+import { guardarDB } from './helpers/guardarArchivo.js';
 // importar configuracion de peticiones por consola
 import { 
     inquirerMenu, 
@@ -44,6 +45,10 @@ const main = async() => {
 
         }
 
+        // guardado en archivo que simula la bd
+        guardarDB( tareas.listadoArr );
+
+        // promesa que espera la opcion del usuario
         await pausa();        
     }
     while( opt !== '0');
