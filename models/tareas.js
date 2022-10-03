@@ -1,4 +1,4 @@
-import { Tarea } from "./tarea";
+import { Tarea } from "./tarea.js";
 
 /*
 * Ejemplo del modelo de datos
@@ -7,7 +7,6 @@ import { Tarea } from "./tarea";
 *      {'uuid-3324-324131-23424: {id:12, desc:asd, completadoEn:9340034 }' },
 *      {'uuid-3324-324131-23425: {id:12, desc:asd, completadoEn:9340034 }' },
 */
-
 
 class Tareas {
 
@@ -20,7 +19,6 @@ class Tareas {
     crearTarea( desc = '' ){
 
         const tarea = new Tarea(desc);
-
         this._listado[tarea.id] = tarea;
 
     }
