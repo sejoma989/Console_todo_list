@@ -1,11 +1,11 @@
 import ('colors');
 
 import { inquirerMenu, pausa } from './helpers/inquirer.js';
-// const {mostrarMenu, pausa} = import ('./helpers/mensajes');
+import { Tarea } from './models/tarea.js';
+import { Tareas } from './models/tareas.js';
+
 
 console.clear();
-
-
 
 const main = async() => {
     
@@ -13,11 +13,22 @@ const main = async() => {
     // console.log('Hola mundo!!');
 
     do {
+
         opt = await inquirerMenu();
         console.log({ opt });
-        
-        await pausa();
-        
+
+        // const tarea = new Tarea('Tarea 1, comprar comida');
+        // // console.log(tarea);
+        // const tareas = new Tareas();
+        // // console.log(tareas);
+
+        // tareas._listado[tarea.id] = tarea;
+        // console.log(tareas);
+
+       
+
+
+        await pausa();        
     }
     while( opt !== '0');
 }
