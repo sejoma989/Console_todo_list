@@ -33,6 +33,7 @@ const main = async() => {
 
         // imprimir menu y almacenar respuesta de usuario
         opt = await inquirerMenu();
+        console.log('\n ------ Creada por @sejoma989 -------'.green);
 
         // case que evalua las opciones que recibe el usuario
         switch (opt) {
@@ -49,7 +50,17 @@ const main = async() => {
             // listar las tareas
             case '2':
                 // impresion por consola del array que recibe desde el listado
-                console.log( tareas.listado );
+                tareas.listadoCompleto();
+            break;
+
+            // listar tareas completadas
+            case '3':
+                tareas.listarPendientesCompletadas();
+            break;
+
+            // listar tareas pendientes
+            case '4':
+                tareas.listarPendientesCompletadas(false);
             break;
 
         }
