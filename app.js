@@ -6,7 +6,8 @@ import {
     inquirerMenu, 
     pausa,
     leerInput,
-    listadoTareasBorrar
+    listadoTareasBorrar, 
+    confirmar
 } from './helpers/inquirer.js';
 import { Tareas } from './models/tareas.js';
 
@@ -65,8 +66,18 @@ const main = async() => {
 
 
             case '6':       // Borrar tareas
+
                 const id = await listadoTareasBorrar(tareas.listado);
-                console.log({ id });
+
+                // Validacion para cuando no se cancela el borrado
+                if ( id !== '0' ) {
+                    const ok = await confirmar('¿Está seguro?')                
+                    if ( ok ) {
+                        tareas.borrarTarea( id );
+                        console.log(' Tarea borrada ')
+                    }                
+                }
+                // console.log({ ok });
             break;
 
         }
