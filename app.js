@@ -7,7 +7,8 @@ import {
     pausa,
     leerInput,
     listadoTareasBorrar, 
-    confirmar
+    confirmar,
+    mostrarListadoChecklist
 } from './helpers/inquirer.js';
 import { Tareas } from './models/tareas.js';
 
@@ -65,10 +66,14 @@ const main = async() => {
             break;
 
 
+            case '5':       // completado | pendiente
+                const ids = await mostrarListadoChecklist( tareas.listado );
+                console.log(ids);
+            break;
+
+
             case '6':       // Borrar tareas
-
                 const id = await listadoTareasBorrar(tareas.listado);
-
                 // Validacion para cuando no se cancela el borrado
                 if ( id !== '0' ) {
                     const ok = await confirmar('¿Está seguro?')                
