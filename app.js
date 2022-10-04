@@ -68,7 +68,8 @@ const main = async() => {
 
             case '5':       // completado | pendiente
                 const ids = await mostrarListadoChecklist( tareas.listado );
-                console.log(ids);
+                // console.log(ids);
+                tareas.toggleCompletada( ids );
             break;
 
 
