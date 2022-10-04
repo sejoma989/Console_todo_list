@@ -5,7 +5,8 @@ import { guardarDB, leerDB } from './helpers/interaccionDB.js';
 import { 
     inquirerMenu, 
     pausa,
-    leerInput 
+    leerInput,
+    listadoTareasBorrar
 } from './helpers/inquirer.js';
 import { Tareas } from './models/tareas.js';
 
@@ -38,8 +39,7 @@ const main = async() => {
         // case que evalua las opciones que recibe el usuario
         switch (opt) {
             
-            // crear tarea
-            case '1':
+            case '1':       // crear tarea
                 // leer descripcion del usuario
                 const desc = await leerInput('Descripcion:');
                 // llamado al metodo crear tarea y asignar la descripcion del usuario
@@ -47,20 +47,26 @@ const main = async() => {
                 console.log('Tarea agregada: '.green, desc);
             break;
 
-            // listar las tareas
-            case '2':
+            
+            case '2':       // listar las tareas
                 // impresion por consola del array que recibe desde el listado
                 tareas.listadoCompleto();
             break;
 
-            // listar tareas completadas
-            case '3':
+            
+            case '3':       // listar tareas completadas
                 tareas.listarPendientesCompletadas();
             break;
 
-            // listar tareas pendientes
-            case '4':
+            
+            case '4':       // listar tareas pendientes
                 tareas.listarPendientesCompletadas(false);
+            break;
+
+
+            case '6':       // Borrar tareas
+                const id = await listadoTareasBorrar(tareas.listado);
+                console.log({ id });
             break;
 
         }
